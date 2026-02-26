@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Sparkles, Leaf, Truck } from 'lucide-react';
 import { features } from '@/data/products';
+import { getAssetPath } from '@/lib/paths';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -138,7 +140,7 @@ export default function Features() {
             className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lifted order-first lg:order-none"
           >
             <img
-              src="/feature-centerpiece.jpg"
+              src={getAssetPath("/feature-centerpiece.jpg")}
               alt="Elegant floral centerpiece"
               className="w-full h-full object-cover"
             />

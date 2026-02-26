@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getAssetPath } from '@/lib/paths';
+
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -129,7 +131,7 @@ export default function Hero() {
               </svg>
               
               <img
-                src="/hero-bouquet.jpg"
+                src={getAssetPath("/hero-bouquet.jpg")}
                 alt="Beautiful floral bouquet with pink and peach roses"
                 className="w-full h-full object-cover animate-breathe"
                 style={{ clipPath: 'url(#pill-arch)' }}

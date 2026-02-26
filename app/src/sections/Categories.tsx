@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import { getAssetPath } from '@/lib/paths';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -177,7 +179,7 @@ export default function Categories() {
               {/* Card with pill arch */}
               <div className="relative aspect-[3/4] overflow-hidden rounded-[3rem] shadow-soft group-hover:shadow-lifted transition-all duration-500 ease-bloom">
                 <img
-                  src={category.image}
+                  src={getAssetPath(category.image)}
                   alt={category.name}
                   className="w-full h-full object-cover transition-transform duration-700 ease-bloom group-hover:scale-110"
                 />

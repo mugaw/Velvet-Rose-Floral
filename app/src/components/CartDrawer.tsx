@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { X, Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
+import { getAssetPath } from '@/lib/paths';
+
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, removeFromCart, updateQuantity, totalPrice, clearCart } = useCart();
@@ -112,7 +114,7 @@ export default function CartDrawer() {
                   {/* Image */}
                   <div className="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-white shadow-xs">
                     <img
-                      src={item.image}
+                      src={getAssetPath(item.image)}
                       alt={item.name}
                       className="w-full h-full object-cover"
                     />

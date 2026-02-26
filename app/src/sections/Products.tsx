@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
 import { products } from '@/data/products';
 import type { Product } from '@/types';
+import { getAssetPath } from '@/lib/paths';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +49,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       <div className="relative aspect-[4/5] overflow-hidden">
         <div className="absolute inset-0" style={{ clipPath: 'ellipse(50% 45% at 50% 45%)' }}>
           <img
-            src={product.image}
+            src={getAssetPath(product.image)}
             alt={product.name}
             className="w-full h-full object-cover transition-transform duration-700 ease-bloom group-hover:scale-110"
           />

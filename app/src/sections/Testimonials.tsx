@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Star, Quote } from 'lucide-react';
 import { testimonials } from '@/data/products';
+import { getAssetPath } from '@/lib/paths';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,7 +129,7 @@ export default function Testimonials() {
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-pale-blush group-hover:ring-coral transition-all duration-300">
                   <img
-                    src={testimonial.avatar}
+                    src={getAssetPath(testimonial.avatar)}
                     alt={testimonial.name}
                     className="w-full h-full object-cover"
                   />

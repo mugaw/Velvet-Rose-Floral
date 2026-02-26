@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Clock } from 'lucide-react';
 import { blogPosts } from '@/data/products';
+import { getAssetPath } from '@/lib/paths';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +97,7 @@ export default function Blog() {
           <div className="blog-post group lg:row-span-2 cursor-pointer" style={{ opacity: 0 }}>
             <div className="relative h-full min-h-[400px] lg:min-h-[600px] rounded-3xl overflow-hidden shadow-soft hover:shadow-lifted transition-all duration-500 ease-bloom">
               <img
-                src={blogPosts[0].image}
+                src={getAssetPath(blogPosts[0].image)}
                 alt={blogPosts[0].title}
                 className="w-full h-full object-cover transition-all duration-700 ease-bloom group-hover:scale-105 filter grayscale-[20%] group-hover:grayscale-0"
               />
@@ -138,7 +140,7 @@ export default function Blog() {
                 {/* Image */}
                 <div className="sm:w-48 lg:w-56 flex-shrink-0 aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden">
                   <img
-                    src={post.image}
+                    src={getAssetPath(post.image)}
                     alt={post.title}
                     className="w-full h-full object-cover transition-all duration-700 ease-bloom group-hover:scale-110 filter grayscale-[20%] group-hover:grayscale-0"
                   />

@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getAssetPath } from '@/lib/paths';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,7 +96,7 @@ export default function About() {
             style={{ clipPath: 'inset(0 100% 0 0)' }}
           >
             <img
-              src="/about-bouquet.jpg"
+              src={getAssetPath("/about-bouquet.jpg")}
               alt="Hand holding a beautiful bouquet of pastel roses"
               className="w-full h-full object-cover"
             />
